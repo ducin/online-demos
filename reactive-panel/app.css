@@ -1,0 +1,23 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.spinner {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 50%;
+  border-top: 4px solid #8f8b8b;
+  border-right: 6px solid #3a44a6;
+  animation: spinner .6s linear infinite;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
