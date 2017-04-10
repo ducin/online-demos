@@ -1,0 +1,10 @@
+#container {
+    width: 300px;
+}
+
+.headline {
+  border: 1px solid #040;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 5px;
+}
