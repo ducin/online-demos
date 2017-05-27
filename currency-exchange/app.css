@@ -1,4 +1,16 @@
+body {
+  padding-top: 50px;
+}
+
+.currency-template {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.big {
+  font-size: 200%;
+}
+
 .amount {
   font-family: monospace;
-  font-size: 200%;
 }

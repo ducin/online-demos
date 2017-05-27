@@ -1,28 +1,98 @@
-<html>
-    <head>
-        <title>currency exchange</title>
-        <link rel="stylesheet" href="app.css" />
-    </head>
-    <body>
-        <div>
-            <h3>cash</h3>
-            <input id="cash-input" /> PLN
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>currency exchange</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />-->
+    <link rel="stylesheet" href="vendors/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Online demos</a>
         </div>
-        <div>
-            <h3>rates</h3>
-            USD: <span class="amount" id="usd-rate"></span>
-            EUR: <span class="amount" id="eur-rate"></span>
-            GBP: <span class="amount" id="gbp-rate"></span>
-            CHF: <span class="amount" id="chf-rate"></span>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../headline-slider">Headline Slider</a></li>
+            <li class="active"><a href="../currency-exchange">Currency exchange</a></li>
+            <li><a href="../reactive-panel">Reactive Panel</a></li>
+          </ul>
         </div>
-        <div>
-            <h3>exchange</h3>
-            USD: <span class="amount" id="usd-exchange"></span>
-            EUR: <span class="amount" id="eur-exchange"></span>
-            GBP: <span class="amount" id="gbp-exchange"></span>
-            CHF: <span class="amount" id="chf-exchange"></span>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="currency-template">
+        <h1>Currency exchange</h1>
+        <p class="lead">Exchange your local currency to another one.</p>
+
+        <ul style="text-align: left;">
+          <li>foreign currency rates change very often (once per few seconds)</li>
+          <li>your cash in <code>PLN</code> can be changed as well</li>
+          <li>display exchange prices always up to date</li>
+        </ul>
+
+        <div class="form-group">
+          <label for="cash-input">Cash to transfer</label>
+          <div class="input-group">
+            <div class="input-group-addon">PLN</div>
+            <input type="text" class="form-control input-lg" id="cash-input" placeholder="cash">
+          </div>
         </div>
-    </body>
-    <script src="Rx.js"></script>
+
+        <table class="table big text-left">
+          <thead>
+            <tr>
+              <th>Currency</th>
+              <th>Rate</th>
+              <th>Exchange</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>USD</td>
+              <td><span class="amount text-primary" id="usd-rate"></span></td>
+              <td><span class="amount text-warning" id="usd-exchange"></span></td>
+            </tr>
+            <tr>
+              <td>EUR</td>
+              <td><span class="amount text-primary" id="eur-rate"></span></td>
+              <td><span class="amount text-warning" id="eur-exchange"></span></td>
+            </tr>
+            <tr>
+              <td>GBP</td>
+              <td><span class="amount text-primary" id="gbp-rate"></span></td>
+              <td><span class="amount text-warning" id="gbp-exchange"></span></td>
+            </tr>
+            <tr>
+              <td>CHF</td>
+              <td><span class="amount text-primary" id="chf-rate"></span></td>
+              <td><span class="amount text-warning" id="chf-exchange"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer>
+        <p>&copy; 2017 Tomasz Ducin IT Services, <i>Asynchronous JavaScript Training</i></p>
+      </footer>
+
+    </div>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.js"></script>-->
+    <script src="vendors/rx.js"></script>
     <script src="app.js"></script>
+  </body>
 </html>
