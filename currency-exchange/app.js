@@ -29,8 +29,18 @@ const
   USDExchangeLabelUpdate = updateLabel($USDExchangeLabel),
   EURExchangeLabelUpdate = updateLabel($EURExchangeLabel),
   GBPExchangeLabelUpdate = updateLabel($GBPExchangeLabel),
-  CHFExchangeLabelUpdate = updateLabel($CHFExchangeLabel)
-
+  CHFExchangeLabelUpdate = updateLabel($CHFExchangeLabel),
+  $USDTrendLabel = document.getElementById('usd-trend'),
+  $EURTrendLabel = document.getElementById('eur-trend'),
+  $GBPTrendLabel = document.getElementById('gbp-trend'),
+  $CHFTrendLabel = document.getElementById('chf-trend'),
+  USDTrendLabelUpdate = updateLabel($USDTrendLabel),
+  EURTrendLabelUpdate = updateLabel($EURTrendLabel),
+  GBPTrendLabelUpdate = updateLabel($GBPTrendLabel),
+  CHFTrendLabelUpdate = updateLabel($CHFTrendLabel),
+  incLabel = '<my-increase></my-increase>',
+  decLabel = '<my-decrease></my-decrease>';
+  
 $cashInput.value = 100000;
 
 const createDeltaObservable = currency => 
@@ -77,6 +87,18 @@ USDRateUpdate$.map(to4).subscribe(USDRateLabelUpdate)
 EURRateUpdate$.map(to4).subscribe(EURRateLabelUpdate)
 GBPRateUpdate$.map(to4).subscribe(GBPRateLabelUpdate)
 CHFRateUpdate$.map(to4).subscribe(CHFRateLabelUpdate)
+
+USDRateUpdate$.pairwise().map(([oldValue, newValue]) => newValue - oldValue > 0)
+  .subscribe(increasing => USDTrendLabelUpdate(increasing ? incLabel : decLabel))
+
+EURRateUpdate$.pairwise().map(([oldValue, newValue]) => newValue - oldValue > 0)
+  .subscribe(increasing => EURTrendLabelUpdate(increasing ? incLabel : decLabel))
+
+GBPRateUpdate$.pairwise().map(([oldValue, newValue]) => newValue - oldValue > 0)
+  .subscribe(increasing => GBPTrendLabelUpdate(increasing ? incLabel : decLabel))
+
+CHFRateUpdate$.pairwise().map(([oldValue, newValue]) => newValue - oldValue > 0)
+  .subscribe(increasing => CHFTrendLabelUpdate(increasing ? incLabel : decLabel))
 
 const cashInputChange$ = Rx.Observable.fromEvent($cashInput, 'change')
   .map(e => e.target.value)
