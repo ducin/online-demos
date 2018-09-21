@@ -1,13 +1,64 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="app.css" />
         <title>online demos</title>
     </head>
     <body>
-        <ul>
-            <li><a href="headline-slider">headline-slider</a></li>
-            <li><a href="reactive-panel">reactive-panel</a></li>
-            <li><a href="currency-exchange">currency-exchange</a></li>
-            <li><a href="waves">waves</a></li>
-        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo right">
+                    <i class="material-icons">school</i>
+                    JS Training / Tomasz Ducin
+                </a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="https://github.com/ducin-public/itcorpo-api">
+                        IT Corpo API
+                    </a></li>
+                    <li><a id="nav-exchange" href="#currency-exchange">Currency Exchange</a></li>
+                    <li><a id="nav-waves" href="#waves">Waves</a></li>
+                    <li><a id="nav-timer" href="#timer">Timer</a></li>
+                    <li><a id="nav-slider" href="#headline-slider">Headline Slider</a></li>
+                    <li><a id="nav-reactive" href="#reactive-panel">Reactive Panel</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="box">
+                <iframe id="screen" src="https://ducin.github.io/online-demos/headline-slider/"
+                    frameborder="0" scrolling="no" onload="resizeIframe(this)"
+                    name="screen" height="80%" width="100%"></iframe>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <!--
+            <div class="container">
+                <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            -->
+            <div class="footer-copyright">
+                <div class="container">
+                © 2018 Tomasz Ducin IT Services
+                <a class="grey-text text-lighten-4 right" href="http://ducin.it">ducin.it</a>
+                </div>
+            </div>
+        </footer>
+        <script src="app.js"></script>
     </body>
 </html>

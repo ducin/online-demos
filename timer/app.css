@@ -1,0 +1,40 @@
+body {
+  font-family: 'Bitter', serif;
+}
+
+.timer {
+  font-size: 300%
+}
+
+.ticks {
+  font-size: 150%
+}
+
+button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(45deg, rgba(100,100,255,1), #3498db);
+  background-image: -moz-linear-gradient(45deg, rgba(100,100,255,1), #3498db);
+  background-image: -ms-linear-gradient(45deg, rgba(100,100,255,1), #3498db);
+  background-image: -o-linear-gradient(45deg, rgba(100,100,255,1), #3498db);
+  background-image: linear-gradient(to bottom, rgba(100,100,255,1), #3498db);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+  
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(45deg, rgba(140,140,255,1), #44a8eb);
+  background-image: -moz-linear-gradient(45deg, rgba(140,140,255,1), #44a8eb);
+  background-image: -ms-linear-gradient(45deg, rgba(140,140,255,1), #44a8eb);
+  background-image: -o-linear-gradient(45deg, rgba(140,140,255,1), #44a8eb);
+  background-image: linear-gradient(to bottom, rgba(140,140,255,1), #44a8eb);
+  text-decoration: none;
+}
+  

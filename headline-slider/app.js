@@ -1,11 +1,16 @@
 const animationSpeed = 1000;
 const cycleTimeout = 2000;
 const visibleCount = 3;
+const texts = NYTIMES;
+
+const delay = (time) => new Promise((resolve, reject) => {
+    setTimeout(resolve, time);
+});
 
 $(document).ready(function(){
     const $container = $("#container");
     function headline(title, hidden){
-        var $el = $(`<div class="headline bg-success">${title}</div>`);
+        var $el = $(`<div class="headline">${title}</div>`);
         if (hidden) {
             $el.css('display', 'none');
         }
@@ -33,30 +38,13 @@ $(document).ready(function(){
         });
     }
 
-    function wait(time){
-        return new Promise((resolve, reject) => {
-            setTimeout(resolve, time);
-        });
-    }
-
-    const texts = [
-        "lorem ipsum",
-        "dolor sit amet",
-        "consectetur adipiscing",
-        "elit pellentesque",
-        "gravida nulla",
-        "a vulputate mattis",
-        "risus diam",
-        "pulvinar sapien",
-        "vel porttitor"
-    ];
     const len = texts.length;
     $texts = texts.map((t,i) => headline(t, i >= visibleCount));
     $texts.slice(0, visibleCount).forEach(t => {
         $container.append(t)
     });
 
-    var first = 0, last = visibleCount;
+    let first = 0, last = visibleCount;
     const inc = value => (value + 1) % len;
 
     const cycle = () => {
@@ -70,7 +58,7 @@ $(document).ready(function(){
             console.log('updated to', first, last);
         })
         .then(() => {
-            return wait(cycleTimeout);
+            return delay(cycleTimeout);
         })
         .then(cycle);
     };

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>RxJS Timer</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
+        <link rel="stylesheet" href="vendors/bootstrap.css" />
+        <link rel="stylesheet" href="app.css" />
+    </head>
+    <body>
+        <h1>Timer</h1>
+
+        <div class="container">
+            <div>
+                <span class="timer" id="timer"></span>
+            </div>
+            <div>
+                <button id="restart">restart</button>
+                <button id="pause">pause</button>
+                <button id="resume">resume</button>
+            </div>
+            <div class="ticks">
+                <input type="radio" name="tick" id="tick01" checked>0.1</input>
+                <input type="radio" name="tick" id="tick025">0.25</input>
+                <input type="radio" name="tick" id="tick05">0.5</input>
+                <input type="radio" name="tick" id="tick1">1</input>
+            </div>          
+        </div>
+
+    </body>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.js"></script>-->
+    <script src="vendors/jquery.js"></script>
+    <script src="vendors/bootstrap.js"></script>
+    <script src="vendors/rx.js"></script>
+    <script src="app.js"></script>
+</html>
