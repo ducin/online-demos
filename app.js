@@ -8,6 +8,7 @@ const setIframeSrc = (src) => {
 }
 
 const IFrameLinks = {
+  'nav-reduce': 'lazy-reduce',
   'nav-slider': 'headline-slider',
   'nav-exchange': 'currency-exchange',
   'nav-waves': 'waves',

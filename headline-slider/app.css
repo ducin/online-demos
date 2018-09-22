@@ -1,5 +1,10 @@
+body {
+  padding: 10px;
+  font-family: 'Bitter', serif;
+}
+
 #container {
-    width: 50%;
+  width: 50%;
 }
 
 .headline {
@@ -9,5 +14,4 @@
   padding: 10px;
   margin: 10px;
   border-radius: 8px;
-  font-family: 'Bitter', serif;
 }
