@@ -10,27 +10,16 @@ const $tick1 = document.getElementById('tick1');
 const $timer = document.getElementById('timer');
 const setTimerValue = (value) => $timer.innerHTML = value;
 
-const formatElapsed = seconds => {
-    let h = (Math.round(seconds / 3600) + '').padStart(2, '0');
-    let min = (Math.round(seconds / 60) + '').padStart(2, '0');
-    let sec = Math.round(seconds % 60 * 10) / 10;
-    return `${h}:${min}:${sec}`;
+const pad = (n) => (n + '').padStart(2, '0')
+const formatTime = (seconds) => {
+    let h = pad(Math.floor(seconds / 3600))
+    let min = pad(Math.floor(seconds / 60))
+    let sec = Math.floor(seconds % 60 * 10) / 10 + ''
+    let [whole, ...fraction] = sec.split('.')
+    whole = pad(whole)
+    sec = [whole, ...fraction].join('.')
+    return `${h}:${min}:${sec}`
 }
-
-/*
-const formatTime = time => {
-    var dt = new Date();
-    return `${dt.getSeconds()}.${Math.floor(dt.getMilliseconds()/100)}`
-}
-
-Rx.Observable.of(new Date())
-    .merge(Rx.Observable.interval(100).map(_ => new Date()))
-    .scan((acc, item) => {
-        debugger;
-        return acc;
-    })
-    .subscribe(setTimerValue)
-*/
 
 const pause$ = Rx.Observable.fromEvent($pause, 'click')
     .mapTo('pause');
@@ -61,9 +50,9 @@ const timer$ = Rx.Observable.merge(pause$, resume$)
     .switchMap(command => command === 'pause' ? Rx.Observable.empty() : tick$)
     .scan(countUp, initialTime)
     .takeWhile(v => v > 0)
-    .map(formatElapsed)
+    .map(formatTime)
 
 restart$.switchMap(_ => timer$)
     .subscribe(setTimerValue)
 
-setTimerValue(formatElapsed(initialTime));
+setTimerValue(formatTime(initialTime));

@@ -13,7 +13,7 @@ const initialRates = {
 
 const
   $cashInput = document.getElementById('cash-input'),
-  updateLabel = label => newValue => label.innerHTML = newValue
+  updateLabel = label => newValue => label.innerHTML = newValue,
   $USDRateLabel = document.getElementById('usd-rate'),
   $EURRateLabel = document.getElementById('eur-rate'),
   $GBPRateLabel = document.getElementById('gbp-rate'),
